@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    // Add any dependencies here
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+task runMain(type: JavaExec) {
+    main = 'com.concurrente.tp1.Main' // Replace 'com.example.miproyecto.Main' with your package and class name
+    classpath = sourceSets.main.runtimeClasspath
+}
